@@ -1,0 +1,47 @@
+#app-container{
+max-width: 320px;
+max-height: 300px;
+position: relative;
+}
+#timer{
+padding-bottom: 10px;
+}
+#working{
+text-align: center;
+}
+#resting{
+text-align: center;
+}
+#workcountdown{
+}
+.countdown{
+}
+.col-centered{
+margin: 0 auto;
+float: none;
+}
+.timer-btn{
+border-radius: 50%;
+}
+.flip-clock-wrapper{
+
+zoom:0.90;
+
+}
+.flip-clock-label{
+font-size: 20px;
+text-align: center;
+}
+.input-group{
+max-width: 150px;
+}
+btn{
+color: white;
+}
+h2{
+text-align: center;
+font-size: 50px;
+}
+body{
+background-color:#F32540;
+}

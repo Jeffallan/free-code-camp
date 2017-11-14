@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!--Javascript CDN-->
+
+    <!--Style Sheet-->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Javascript-->
+    <script src="script.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container-fluid">
+        <form name="Calculator" onsubmit="return false" onkeydown="if(event.keyCode==13) equals()">
+
+            <div>
+                <input id="screen" Name="Screen" type="text" class="form-control" />
+            </div>
+            <div id="button-panel">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="(" onclick="Calculator.Screen.value+='('">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value=")" onclick="Calculator.Screen.value+=')'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn clear" type="button" value="D" onclick="del()">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn clear" type="button" value="X" onclick="Calculator.Screen.value=''">
+
+                        </input>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="7" onclick="Calculator.Screen.value+='7'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="8" onclick="Calculator.Screen.value+='8'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="9" onclick="Calculator.Screen.value+='9'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn operator" type="button" value="/" onclick="Calculator.Screen.value+='/'">
+
+                        </input>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="4" onclick="Calculator.Screen.value+='4'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="5" onclick="Calculator.Screen.value+='5'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="6" onclick="Calculator.Screen.value+='6'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn operator" type="button" value="*" onclick="Calculator.Screen.value+='*'">
+
+                        </input>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="1" onclick="Calculator.Screen.value+='1'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="2" onclick="Calculator.Screen.value+='2'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="3" onclick="Calculator.Screen.value+='3'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn operator" type="button" value="-" onclick="Calculator.Screen.value+='-'">
+
+                        </input>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="0" onclick="Calculator.Screen.value+='0'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn number" type="button" value="." onclick="Calculator.Screen.value+='.'">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn operator" type="button" value="=" onclick="equals()">
+
+                        </input>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-m-3">
+                        <input class="btn operator" type="button" value="+" onclick="Calculator.Screen.value+='+'">
+
+                        </input>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>

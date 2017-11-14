@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pomodoro Timer</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--flipclock-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css"/>
+    <!--also requires jquery see below-->
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Javascript-->
+    <script src="script.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid navbar navbar-inverse">
+      <img class="navbar-brand" src="http://clipart-library.com/data_images/491382.png"/>
+      <a class="navbar-brand" target="_blank" href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Pomodoro Timer</a>
+    </div>
+    <div class="container-fluid" id="app-container">
+      <div class="row" id="timer">
+        <div class="col-xs-6 ">
+          <h2>Work</h2>
+          <div class="input-group col-centered">
+            <span class="input-group-btn">
+              <button class="btn btn-success timer-btn" type="button" id="minuswork">-</button>
+            </span>
+            <input readonly type="text" class="form-control" placeholder="minutes working" value="25" id="working">
+            <span class="input-group-btn">
+              <button class="btn btn-success timer-btn" type="button" id="pluswork">+</button>
+            </span>
+          </div>
+        </div>
+        <div class="col-xs-6 ">
+          <h2>Rest</h2>
+          <div class="input-group col-centered">
+            <span class="input-group-btn">
+              <button class="btn btn-success timer-btn" type="button" id="minusbreak">-</button>
+            </span>
+            <input readonly type="text" class="form-control" placeholder="minutes break" value="5" id="resting">
+            <span class="input-group-btn">
+              <button class="btn btn-success timer-btn" type="button" id="plusbreak">+</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <buton class="btn btn-success start-btn col-xs-2 col-xs-offset-5">start</buton>
+      </div>
+      <div class="row">
+        <div class="workClock col-xs-4 col-xs-offset-4">
+        </div>
+        <div class="restClock col-xs-4 col-xs-offset-4">
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

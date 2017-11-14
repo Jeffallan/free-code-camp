@@ -1,0 +1,33 @@
+body {
+    background: url("https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png") no-repeat center fixed;
+}
+
+.entries {
+    margin-bottom: 0px;
+    border-style: groove;
+    border-width: 5px;
+    border-radius: 50px;
+}
+
+h2 {
+    text-align: center;
+}
+
+input-group {
+    width: 50%;
+}
+
+p {
+    text-align: center;
+}
+
+.random {
+    background-color: white;
+    text-align: center;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.search-bar {
+    text-align: center;
+}

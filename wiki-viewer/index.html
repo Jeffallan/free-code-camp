@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js"></script>
+<head/>
+
+    <body ng-app="wikiApp" ng-controller="wikiCtrl">
+        <div class="navbar navbar-inverse">
+            <a class="navbar-brand" href="https://www.wikipedia.org/" target="_blank">Wikipedia Search</a>
+        </div>
+        <div class="search-bar">
+            <form class="search form-inline" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Wikipedia" ng-model="query">
+                    <span class="input-group-btn">
+       <button class="btn btn-info" type="button" ng-click="submit()"><i class="glyphicon glyphicon-search"></i></button>
+     </span>
+                </div>
+            </form>
+        </div>
+        <div class="well entries" ng-repeat="e in entries.query.pages" ng-hide="query = ''">
+            <h2><small><strong>{{e.title}}</strong></small></h2>
+            <p>{{e.extract}}</p>
+            <a target='_blank' href='https://en.wikipedia.org/?curid={{e.pageid}}'>Full Article</a>
+        </div>
+        <br />
+
+        <div class="well random">
+            <a target="_blank" href="https://en.wikipedia.org/wiki/Special:Random"><strong>Something Completely Different</strong></a>
+        </div>
+    </body>
+</head>
+
+</html>

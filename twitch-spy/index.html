@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+    <!--Angular JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- stylesheet and javascript-->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="twitchApp" ng-controller="twitchCtrl" ng-init="getFCCData(); isStreaming();">
+    <div class="container container-fluid">
+        <div class="jumbotron">
+            <h1>Twitch Spy</h1>
+            <h2>Is Free Code Camp Streaming?</h2>
+        </div>
+            <div>
+                <div ng-if="isStreaming.data.length==0" class="info-container">
+                    <span><img class="thumbnail" src="{{fccData.data[0].profile_image_url}}"/></span>
+                    <h2 class="stream-heading">{{fccData.data[0].display_name}} is offline</h2>
+                    <br />
+                    <p class="info">{{fccData.data[0].description}}</p>
+                    <h3 class="views">{{fccData.data[0].view_count}} Views</h3>
+                    <a class="pull-right" href="https://twitch.tv/{{fccData.data[0].login}}">https://twitch.tv/{{fccData.data[0].login}}</a>
+                    </div>
+                    <div ng-if="isStreaming.data.length!=0" class="info-container">
+                        <img class="thumbnail" src="{{fccData.data[0].profile_image_url}}"/>
+                        <h2 class="stream-heading">{{fccData.data[0].display_name}} is live</h2>
+                        <br />
+                        <p class="info">
+                        <strong>Now Showing: </strong>{{isStreaming.data[0].title}}</p>
+                        <p class="info">{{fccData.data[0].description}}</p>
+                        <h3 class="views">{{isStreaming.data[0].viewer_count}} Are Watching</h3>
+                        <a class="pull-right" href="https://twitch.tv/{{fccData.data[0].login}}">https://twitch.tv/{{fccData.data[0].login}}</a>
+                </div>
+            </div>
+
+    </div>
+</div>
+</body>
+
+</html>
